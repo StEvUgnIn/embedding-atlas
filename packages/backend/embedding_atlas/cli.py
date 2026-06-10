@@ -382,7 +382,7 @@ def main(
     labels: str | None,
     enable_mcp: bool,
 ):
-    if inspect.stack() is None:
+    if __name__ == "__main__":
         apply_logging_config()
 
     if with_modules is not None:
