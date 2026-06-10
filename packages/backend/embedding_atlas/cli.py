@@ -3,6 +3,7 @@
 """Command line interface."""
 
 import importlib
+import inspect
 import json
 import logging
 import pathlib
@@ -381,7 +382,8 @@ def main(
     labels: str | None,
     enable_mcp: bool,
 ):
-    apply_logging_config()
+    if inspect.stack() is None:
+        apply_logging_config()
 
     if with_modules is not None:
         import_modules(with_modules)
