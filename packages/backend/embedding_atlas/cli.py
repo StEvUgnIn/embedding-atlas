@@ -3,6 +3,7 @@
 """Command line interface."""
 
 import importlib
+import inspect
 import json
 import logging
 import socket
@@ -380,7 +381,8 @@ def main(
     labels: str | None,
     enable_mcp: bool,
 ):
-    apply_logging_config()
+    if __name__ == "__main__":
+        apply_logging_config()
 
     if with_modules is not None:
         import_modules(with_modules)
