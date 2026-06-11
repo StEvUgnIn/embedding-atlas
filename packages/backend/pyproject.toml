@@ -44,6 +44,10 @@ source = "https://github.com/apple/embedding-atlas"
 requires = ["hatchling"]
 build-backend = "hatchling.build"
 
+[tool.setuptools.package-data]
+static = ['embedding_atlas/static/*']
+widget_static = ['embedding_atlas/widget_static/*']
+
 [tool.hatch.build]
 artifacts = [
   "embedding_atlas/static",
